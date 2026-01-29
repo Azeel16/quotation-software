@@ -1,0 +1,60 @@
+.orders-page {
+  padding: 20px;
+  outline: none;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.orders-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 12px;
+  color: #666;
+}
+
+.orders-table {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.orders-head,
+.orders-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr 1fr;
+  padding: 10px 12px;
+}
+
+.orders-head {
+  background: #f4f6f8;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.orders-row {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.orders-row:nth-child(even) {
+  background: #fafafa;
+}
+
+.orders-row.active {
+  background: #e6f0ff;
+  outline: 1px solid #3b82f6;
+}
+
+.orders-empty {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+}
