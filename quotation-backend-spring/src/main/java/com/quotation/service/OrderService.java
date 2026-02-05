@@ -172,6 +172,7 @@ public class OrderService {
         response.setOrderNumber(order.getOrderNumber());
         response.setCustomerId(order.getCustomer().getId());
         response.setCustomerName(order.getCustomerName());
+        response.setCustomerPhone(order.getCustomer().getPhone());
         
         if (order.getEmployee() != null) {
             response.setEmployeeId(order.getEmployee().getId());

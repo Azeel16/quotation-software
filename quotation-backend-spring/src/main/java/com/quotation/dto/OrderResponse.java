@@ -13,6 +13,7 @@ public class OrderResponse {
     private String orderNumber;
     private Long customerId;
     private String customerName;
+    private String customerPhone;
     private Long employeeId;
     private String employeeName;
     private List<OrderItemResponse> items;

@@ -9,6 +9,9 @@ build/
 !**/src/test/**/build/
 
 # Environment variables and sensitive data
+# Note: application.properties is tracked for structure reference
+# Use application-{profile}.properties for environment-specific configs
+# Or use environment variables to override sensitive values
 application-local.properties
 application-dev.properties
 application-prod.properties
