@@ -18,6 +18,26 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @PostMapping("/quotations")
+    public OrderResponse createQuotation(@RequestBody OrderRequest request) {
+        return orderService.createOrder(request);
+    }
+
+    @GetMapping("/quotations")
+    public List<OrderResponse> getAllQuotations() {
+        return orderService.getAllOrders();
+    }
+
+    @GetMapping("/quotations/{id}")
+    public OrderResponse getQuotation(@PathVariable Long id) {
+        return orderService.getOrderById(id);
+    }
+
+    @GetMapping("/quotations/{id}/receipt")
+    public OrderResponse getReceipt(@PathVariable Long id) {
+        return orderService.getOrderById(id);
+    }
+
     @GetMapping
     public ResponseEntity<List<OrderResponse>> getAllOrders() {
         List<OrderResponse> orders = orderService.getAllOrders();

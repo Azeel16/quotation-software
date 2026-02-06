@@ -26,6 +26,11 @@ public class ItemController {
         return ResponseEntity.ok(items);
     }
 
+    @GetMapping("/search")
+    public List<ItemResponse> searchItems(@RequestParam String keyword) {
+        return itemService.searchItems(keyword);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ItemResponse> getItemById(@PathVariable Long id) {
         ItemResponse item = itemService.getItemById(id);
