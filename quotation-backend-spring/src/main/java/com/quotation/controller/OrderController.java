@@ -2,6 +2,7 @@ package com.quotation.controller;
 
 import com.quotation.dto.OrderRequest;
 import com.quotation.dto.OrderResponse;
+import com.quotation.dto.OrderUpdateRequest;
 import com.quotation.service.OrderService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,14 @@ public class OrderController {
             @PathVariable Long id,
             @Valid @RequestBody OrderRequest request) {
         OrderResponse order = orderService.updateOrder(id, request);
+        return ResponseEntity.ok(order);
+    }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<OrderResponse> updateOrderStatus(
+            @PathVariable Long id,
+            @Valid @RequestBody OrderUpdateRequest request) {
+        OrderResponse order = orderService.updateOrderStatus(id, request.getStatus());
         return ResponseEntity.ok(order);
     }
 

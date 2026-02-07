@@ -118,6 +118,15 @@ public class OrderService {
         return convertToResponse(updated);
     }
 
+    @Transactional
+    public OrderResponse updateOrderStatus(Long id, Order.OrderStatus status) {
+        Order order = orderRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Order", "id", id));
+        order.setStatus(status);
+        Order updated = orderRepository.save(order);
+        return convertToResponse(updated);
+    }
+
     public void deleteOrder(Long id) {
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Order", "id", id));
